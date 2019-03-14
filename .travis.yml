@@ -5,8 +5,10 @@ sudo: required
 go:
   - 1.x
 
-install:
+before_install:
+  - sudo apt-get update
   - sudo apt-get install -y lftp
+  - python3 minikube_version.py
   
 script:
   - bash build.sh
