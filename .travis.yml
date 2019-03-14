@@ -1,0 +1,13 @@
+language: go
+os: linux-ppc64le
+sudo: required
+
+go:
+  - 1.x
+
+
+script:
+  - bash build.sh
+
+
+
