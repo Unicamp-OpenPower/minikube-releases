@@ -4,7 +4,7 @@ sudo: required
 
 go:
   - 1.x
-
+go_import_path: k8s.io/minikube
 
 script:
   - bash build.sh
