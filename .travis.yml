@@ -17,8 +17,8 @@ script:
   - sudo mv minikube-0.34.0 minikube
 #  - sudo chmod -R 777 minikube
   - cd minikube
-  - make
-  - make test
+  - sudo make
+  - sudo make test
   - sudo mv /out/minikube /out/minikube_0.34.0
     
 after_success:
