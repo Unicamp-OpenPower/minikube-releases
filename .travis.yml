@@ -12,14 +12,16 @@ script:
   - cd /home/travis/gopath/src
   - mkdir k8s.io
   - cd k8s.io
-  - sudo wget https://github.com/kubernetes/minikube/archive/v0.30.0.zip
-  - sudo unzip v0.30.0.zip
-  - sudo mv minikube-0.30.0 minikube
+  - sudo wget https://github.com/kubernetes/minikube/archive/v0.34.1.zip
+  - sudo unzip v0.34.1.zip
+  - sudo mv minikube-0.34.1 minikube
   - sudo chmod -R 777 minikube
   - cd minikube
   - make
   - make test
-  - sudo mv /home/travis/gopath/src/k8s.io/minikube/out/minikube /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.30.0
+  - sudo mv /home/travis/gopath/src/k8s.io/minikube/out/minikube /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.34.1
     
 after_success:
-  - sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/ /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.30.0" 
+  - sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/ /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.34.1" 
+  - sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; mkdir /ppc64el/minikube/latest"
+  - sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/latest/ /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.34.1"
