@@ -1,4 +1,6 @@
-cd $GOPATH/src
+go_import_path: k8s.io/minikube
+
+cd ..
 sudo mkdir k8s.io
 cd k8s.io
 sudo wget https://github.com/kubernetes/minikube/archive/v0.34.0.zip
