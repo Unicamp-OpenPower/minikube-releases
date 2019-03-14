@@ -19,7 +19,7 @@ script:
   - cd minikube
   - make
   - make test
-  - sudo mv /out/minikube /out/minikube_0.34.0
+  - sudo mv /home/travis/gopath/src/k8s.io/minikube/out/minikube /home/travis/gopath/src/k8s.io/minikube/out/minikube_0.34.0
     
 after_success:
   - sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/ /home/ubuntu/go/src/k8s.io/minikube/out/minikube_0.34.0" 
