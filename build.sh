@@ -1,4 +1,3 @@
-go_import_path: k8s.io/minikube
 
 cd ..
 sudo mkdir k8s.io
