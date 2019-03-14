@@ -9,10 +9,9 @@ install:
   - sudo apt-get install -y ftp
   
 script:
-  - echo "TESTEEE"
-  - echo $GOPATH
-  - cd ..
-  - rm -rf -f minikube
+  - cd /home/travis/gopath/src
+  - mkdir k8s.io
+  - cd k8s.io
   - sudo wget https://github.com/kubernetes/minikube/archive/v0.34.0.zip
   - sudo unzip v0.34.0.zip
   - sudo mv minikube-0.34.0 minikube
