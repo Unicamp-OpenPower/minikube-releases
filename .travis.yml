@@ -10,6 +10,8 @@ install:
   - sudo apt-get install -y ftp
   
 script:
+  - echo "TESTEEE"
+  - pwd
   - cd ..
   - rm -rf -f minikube
   - sudo wget https://github.com/kubernetes/minikube/archive/v0.34.0.zip
