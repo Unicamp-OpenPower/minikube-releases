@@ -20,5 +20,5 @@ then
         sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/minikube/latest/minikube_$old_version" 
     fi
     sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/ /home/travis/gopath/src/k8s.io/minikube/out/minikube_$version" 
-    sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/minikube/minikube_$del_version" 
+#    sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/minikube/minikube_$del_version" 
 fi
