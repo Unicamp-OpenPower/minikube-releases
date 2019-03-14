@@ -4,14 +4,13 @@ sudo: required
 
 go:
   - 1.x
-go_import_path: minikube
 
 install:
   - sudo apt-get install -y ftp
   
 script:
   - echo "TESTEEE"
-  - pwd
+  - echo $GOPATH
   - cd ..
   - rm -rf -f minikube
   - sudo wget https://github.com/kubernetes/minikube/archive/v0.34.0.zip
