@@ -1,9 +1,9 @@
 language: go
-os: linux-ppc64le
+os: linux
+arch: ppc64le
 sudo: required
 
-go:
-  - 1.x
+go: 1.13.x
 
 before_install:
   - sudo apt-get update
@@ -12,3 +12,10 @@ before_install:
   
 script:
   - bash build.sh
+
+notifications:
+  slack:
+    rooms:
+      - secure: "nN4f89cYYXGtu35zADFmK2ACxXtszNmbMskyGdn5E9usFqLAvdg8sdd9zS5wXd3ng2a7/EL0M2tT4iP1+fvVh8vad2XPIE4F0mIua98A8Zm+zfwna0CuflqvPQoWteKgza2ZNdKTDBpCsLAqzrn5V/C/HnPVTJIrnwArg0EcSWMcxHox4lxfyGoOotiW3MyQExUkIQearS/f0MdadX7N8VkWl321FrQ3fMne2fs5CYpR+PTl7iYsbUxcQi9XSxFQut39hAceNEYVgp7d/UX+Ny+CnVAahsD9z/tzNH6EF7vn4LXGm5I15DkB4NQ5EtkcOUrfPdEvBKUyGJHz1/Lb9+CLk4GRTIvwT4tMbW0ZTUPe0k9C2v29Nn/J3jC4cjFM17FTKnpWPCygJ71GQW/KOfSFKgiJla3VFOjQJSHdpKMbUnuAN5ZhDCp14WYzz0UpowUegGD+Sc9h0A/gketo4UkXMSeI1gISPa80kamquEzkhxdpi1Fa3KU9tzuYHwRn4pBYGonF0kFq1kFnIl3VKCnl42wBe9+FoJCUZ/H0vkotzY6uoc+Tu68oeeercTFuJJTeh4r5kgCZMKIKuYseucgkry1VzgMi8iC6lbRcn54GrJZOX9dTp2gwyVd9QPsNbDz2d/u+vSQfhOtp6w2Ma67fU+3jamb8Gxluzv6hjzg="
+    on_success: change
+    on_failure: change
