@@ -5,7 +5,7 @@ html = str(
     requests.get('https://github.com/kubernetes/minikube/releases/latest').content)
 index = html.find('Release ')
 current_version = html[index + 9:index + 15]
-file = open('current_version.txt', 'w')
+file = open('github_version.txt', 'w')
 file.writelines(current_version.strip(" "))
 file.close()
 
