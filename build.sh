@@ -29,7 +29,7 @@ then
     sudo mv empacotar-rpm.sh $LOCALPATH/k8s.io/minikube/out/
     cd $LOCALPATH/k8s.io/minikube/out/
     sudo ./empacotar-deb.sh minikube minikube_$github_version $github_version " "
-    sudo ./empacotar-rpm.sh minikube minikube_$github_version $github_version " " "minikube implements a local Kubernetes cluster on macOS, Linux, and Windows"
+    sudo ./empacotar-rpm.sh minikube minikube_$github_version $github_version " " "Minikube is a tool that makes it easy to run Kubernetes locally."
     if [[ $github_version > $ftp_version ]]
     then
         sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minikube/latest/ $LOCALPATH/k8s.io/minikube/out/minikube_$github_version"
