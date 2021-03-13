@@ -1,16 +1,17 @@
 language: go
 os: linux
-dist: bionic
+dist: focal
 arch: ppc64le
 sudo: required
 
-go: "1.14.x"
+go: "1.15.x"
 
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y lftp unzip zip
   - sudo apt install rpm
   - sudo apt install build-essential python3 tar wget
+  - printf "set ssl:verify-certificate false" >> ~/.lftprc
   - python3 ftp_version.py
 
 script:
